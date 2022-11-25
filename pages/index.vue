@@ -1,21 +1,9 @@
 <template>
-  <main>
-    <h1>Home page</h1>
-    <NuxtLink to="/about">
-      About (internal link that belongs to the Nuxt App)
-    </NuxtLink>
-    <a href="https://nuxtjs.org">External Link to another page</a>
-    <NuxtLink to="/about" no-prefetch>About page not pre-fetched</NuxtLink>
-    <NuxtLink to="/about" :prefetch="false">About page not pre-fetched</NuxtLink>
-
-  </main>
+  <NuxtLayout :name="layout">
+    <NuxtPage />
+  </NuxtLayout>
 </template>
-<style>
-.nuxt-link-active {
-  color: red;
-}
-
-.nuxt-link-exact-active {
-  color: green;
-}
-</style>
+<script setup>
+// You might choose this based on an API call or logged-in status
+const layout = "custom";
+</script>
